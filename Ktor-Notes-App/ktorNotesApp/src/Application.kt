@@ -1,5 +1,6 @@
 package com.notesapp
 
+import com.notesapp.routes.registerRoute
 import io.ktor.application.*
 import io.ktor.features.*
 import io.ktor.gson.*
@@ -12,7 +13,9 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 fun Application.module(testing: Boolean = false) {
     install(DefaultHeaders)
     install(CallLogging)
-    install(Routing)
+    install(Routing){
+        registerRoute()
+    }
     install(ContentNegotiation){
         gson {
             setPrettyPrinting()
