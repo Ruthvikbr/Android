@@ -1,8 +1,6 @@
 package com.notesapp.routes
 
-import com.notesapp.data.checkIfUserExists
-import com.notesapp.data.collection.User
-import com.notesapp.data.registerUser
+import com.notesapp.data.checkPasswordForEmail
 import com.notesapp.data.requests.AccountRequests
 import com.notesapp.data.responses.SimpleResponse
 import io.ktor.application.call
@@ -15,8 +13,8 @@ import io.ktor.routing.Route
 import io.ktor.routing.post
 import io.ktor.routing.route
 
-fun Route.registerRoute(){
-    route("/register"){
+fun Route.loginRoute(){
+    route("/login"){
         post {
             val request = try {
                 call.receive<AccountRequests>()
@@ -24,17 +22,12 @@ fun Route.registerRoute(){
                 call.respond(BadRequest)
                 return@post
             }
-            val userExists = checkIfUserExists(request.email)
-            if(!userExists){
-                if(registerUser(User(request.email,request.password))){
-                    call.respond(OK, SimpleResponse(true,"Account successfully created"))
-                }else{
-                    call.respond(OK,SimpleResponse(false,"Unknown Error occurred"))
-                }
+            val isValidLogin = checkPasswordForEmail(request.email,request.password)
+            if(isValidLogin){
+                call.respond(OK,SimpleResponse(true,"Successfully logged in"))
             }else{
-                call.respond(OK,SimpleResponse(false,"Account already exists"))
+                call.respond(OK,SimpleResponse(false,"Your Email or password is incorrect"))
             }
-
         }
     }
 }
