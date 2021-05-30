@@ -2,7 +2,6 @@ package com.notesapp.data
 
 import com.notesapp.data.collection.Note
 import com.notesapp.data.collection.User
-import org.litote.kmongo.MongoOperator
 import org.litote.kmongo.contains
 import org.litote.kmongo.coroutine.coroutine
 import org.litote.kmongo.eq
@@ -27,5 +26,5 @@ suspend fun checkPasswordForEmail(email:String,password:String): Boolean{
 }
 
 suspend fun getNotesForEmail(email: String):List<Note>{
-    return Notes.find(Note::owners contains email).toList()
+    return Notes.find(Note::owners contains  email).toList()
 }

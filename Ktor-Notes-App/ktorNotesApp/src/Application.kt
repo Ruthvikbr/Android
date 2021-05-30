@@ -1,14 +1,19 @@
 package com.notesapp
 
 import com.notesapp.data.checkPasswordForEmail
-import com.notesapp.routes.NoteRoutes
+import com.notesapp.routes.noteRoute
 import com.notesapp.routes.loginRoute
 import com.notesapp.routes.registerRoute
-import io.ktor.application.*
-import io.ktor.auth.*
-import io.ktor.features.*
-import io.ktor.gson.*
-import io.ktor.routing.*
+import io.ktor.application.Application
+import io.ktor.application.install
+import io.ktor.auth.Authentication
+import io.ktor.auth.UserIdPrincipal
+import io.ktor.auth.basic
+import io.ktor.features.CallLogging
+import io.ktor.features.ContentNegotiation
+import io.ktor.features.DefaultHeaders
+import io.ktor.gson.gson
+import io.ktor.routing.Routing
 
 fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 
@@ -17,7 +22,6 @@ fun main(args: Array<String>): Unit = io.ktor.server.netty.EngineMain.main(args)
 fun Application.module(testing: Boolean = false) {
     install(DefaultHeaders)
     install(CallLogging)
-
     install(ContentNegotiation) {
         gson {
             setPrettyPrinting()
@@ -29,18 +33,18 @@ fun Application.module(testing: Boolean = false) {
     install(Routing) {
         registerRoute()
         loginRoute()
-        NoteRoutes()
+        noteRoute()
     }
 }
 
 private fun Authentication.Configuration.configureAuth() {
     basic {
-        realm = "Note server"
+        realm = "Note Server"
         validate { credentials ->
-            val name = credentials.name
+            val email = credentials.name
             val password = credentials.password
-            if (checkPasswordForEmail(name, password)) {
-                UserIdPrincipal(name)
+            if(checkPasswordForEmail(email, password)) {
+                UserIdPrincipal(email)
             } else null
         }
     }
