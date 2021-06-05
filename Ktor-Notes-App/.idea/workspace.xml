@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89cb12f0-1507-4f53-930c-e55d8bbf95ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Ktor-Notes-App.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/resources/application.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/Application.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/NotesDatabase.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/collection/Note.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/collection/User.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/requests/AccountRequests.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/requests/AddOwnerRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/requests/DeleteNoteRequest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/responses/SimpleResponse.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/routes/LoginRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/routes/NoteRoutes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/routes/RegisterRoute.kt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1tWispqNmq4vA4UmOE9hUkG21KQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89cb12f0-1507-4f53-930c-e55d8bbf95ed" name="Default Changelist" comment="" />
+      <created>1622891458247</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622891458247</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1622891524851">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1622891524851" />
+  </component>
+</project>
