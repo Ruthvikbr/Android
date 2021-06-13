@@ -54,6 +54,7 @@ dependencies {
 
     // Architectural Components
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     // Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"

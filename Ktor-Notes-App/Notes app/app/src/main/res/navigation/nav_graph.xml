@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/authFragment">
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.ruthvikbr.notes_app.ui.auth.AuthFragment"
+        android:label="AuthFragment" >
+        <action
+            android:id="@+id/action_authFragment_to_noteFragment"
+            app:destination="@id/noteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditFragment"
+        android:name="com.ruthvikbr.notes_app.ui.addeditnote.AddEditFragment"
+        android:label="AddEditFragment" >
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.ruthvikbr.notes_app.ui.notedetails.NoteDetailFragment"
+        android:label="NoteDetailFragment" >
+        <action
+            android:id="@+id/action_noteDetailFragment_to_addEditFragment"
+            app:destination="@id/addEditFragment" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.ruthvikbr.notes_app.ui.notes.NoteFragment"
+        android:label="NoteFragment" >
+        <action
+            android:id="@+id/action_noteFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+        <action
+            android:id="@+id/action_noteFragment_to_addEditFragment"
+            app:destination="@id/addEditFragment" />
+        <action
+            android:id="@+id/action_noteFragment_to_authFragment"
+            app:destination="@id/authFragment" />
+    </fragment>
+</navigation>
