@@ -7,4 +7,6 @@ object Constants {
     const val ENCRYPTED_SHARED_PREF_NAME = "enc_share_pref_name"
     const val KEY_LOGGED_IN_EMAIL = "KEY_LOGGED_IN_EMAIL"
     const val KEY_LOGGED_IN_PASSWORD = "KEY_LOGGED_IN_PASSWORD"
+    const val NO_EMAIL = "NO_EMAIL"
+    const val NO_PASSWORD = "NO_PASSWORD"
 }

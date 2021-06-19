@@ -13,6 +13,8 @@ import com.ruthvikbr.notes_app.data.remote.BasicAuthInterceptor
 import com.ruthvikbr.notes_app.ui.BaseFragment
 import com.ruthvikbr.notes_app.utils.Constants.KEY_LOGGED_IN_EMAIL
 import com.ruthvikbr.notes_app.utils.Constants.KEY_LOGGED_IN_PASSWORD
+import com.ruthvikbr.notes_app.utils.Constants.NO_EMAIL
+import com.ruthvikbr.notes_app.utils.Constants.NO_PASSWORD
 import com.ruthvikbr.notes_app.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_auth.*
@@ -33,6 +35,12 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
     private val viewModel:AuthViewModel by viewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        if(isUserLoggedIn()){
+            authenticateApi(curEmail?:"",curPassword?:"")
+            redirect()
+        }
+
         requireActivity().requestedOrientation = SCREEN_ORIENTATION_PORTRAIT
         subscribeToObservers()
         btnRegister.setOnClickListener {
@@ -65,6 +73,12 @@ class AuthFragment : BaseFragment(R.layout.fragment_auth) {
             AuthFragmentDirections.actionAuthFragmentToNoteFragment(),
             navOptions
         )
+    }
+
+    private fun isUserLoggedIn():Boolean{
+        curEmail = sharedPref.getString(KEY_LOGGED_IN_EMAIL, NO_EMAIL)?: NO_EMAIL
+        curPassword = sharedPref.getString(KEY_LOGGED_IN_PASSWORD, NO_PASSWORD)?: NO_PASSWORD
+        return curEmail!= NO_EMAIL && curPassword!= NO_PASSWORD
     }
 
     private fun subscribeToObservers(){
