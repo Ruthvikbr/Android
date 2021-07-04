@@ -1,6 +1,27 @@
 package com.ruthvikbr.notes_app.ui.notes
 
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
+import com.ruthvikbr.notes_app.data.local.entities.Note
+import com.ruthvikbr.notes_app.repositories.NoteRepository
+import com.ruthvikbr.notes_app.utils.Event
+import com.ruthvikbr.notes_app.utils.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class NotesViewModel : ViewModel() {
+@HiltViewModel
+class NotesViewModel @Inject constructor(
+    private val repository: NoteRepository
+) : ViewModel() {
+
+    private val forceUpdate = MutableLiveData<Boolean>(false)
+    private val allNotes = forceUpdate.switchMap {
+        repository.getAllNotes().asLiveData(viewModelScope.coroutineContext)
+    }.switchMap {
+        MutableLiveData(Event(it))
+    }
+
+    val AllNotes: LiveData<Event<Resource<List<Note>>>> = allNotes
+
+    fun syncAllNotes() = forceUpdate.postValue(true)
+
 }
