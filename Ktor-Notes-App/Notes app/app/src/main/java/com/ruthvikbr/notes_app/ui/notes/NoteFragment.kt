@@ -24,7 +24,6 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class NoteFragment : BaseFragment(R.layout.fragment_notes) {
 
-
     private val viewModel: NotesViewModel by viewModels()
 
     @Inject
@@ -51,7 +50,6 @@ class NoteFragment : BaseFragment(R.layout.fragment_notes) {
                 NoteFragmentDirections.actionNoteFragmentToNoteDetailFragment(it.id)
             )
         }
-
 
         fabAddNote.setOnClickListener {
             findNavController().navigate(
