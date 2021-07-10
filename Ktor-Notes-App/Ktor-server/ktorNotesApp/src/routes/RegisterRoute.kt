@@ -5,6 +5,7 @@ import com.notesapp.data.collection.User
 import com.notesapp.data.registerUser
 import com.notesapp.data.requests.AccountRequests
 import com.notesapp.data.responses.SimpleResponse
+import com.notesapp.security.getHashWithString
 import io.ktor.application.call
 import io.ktor.features.ContentTransformationException
 import io.ktor.http.HttpStatusCode.Companion.BadRequest
@@ -26,7 +27,7 @@ fun Route.registerRoute(){
             }
             val userExists = checkIfUserExists(request.email)
             if(!userExists){
-                if(registerUser(User(request.email,request.password))){
+                if(registerUser(User(request.email, getHashWithString(request.password)))){
                     call.respond(OK, SimpleResponse(true,"Account successfully created"))
                 }else{
                     call.respond(OK,SimpleResponse(false,"Unknown Error occurred"))

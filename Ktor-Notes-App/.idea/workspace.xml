@@ -2,31 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89cb12f0-1507-4f53-930c-e55d8bbf95ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Ktor-Notes-App.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/resources/application.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/resources/logback.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/Application.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/NotesDatabase.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/collection/Note.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/collection/User.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/requests/AccountRequests.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/requests/AddOwnerRequest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/requests/DeleteNoteRequest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/data/responses/SimpleResponse.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/routes/LoginRoute.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/routes/NoteRoutes.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ktorNotesApp/src/routes/RegisterRoute.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/data/local/NoteDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/data/local/NoteDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/data/local/NoteDatabase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/data/local/NoteDatabase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/repositories/NoteRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/repositories/NoteRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/ui/notedetails/NoteDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/ui/notedetails/NoteDetailFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/ui/notedetails/NoteDetailViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/ui/notedetails/NoteDetailViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/ui/notes/NoteFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/ui/notes/NoteFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/ui/notes/NotesViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Notes app/app/src/main/java/com/ruthvikbr/notes_app/ui/notes/NotesViewModel.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +25,16 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Ktor-server" />
     <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -62,11 +47,5 @@
       <updated>1622891458247</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1622891524851">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1622891524851" />
   </component>
 </project>
