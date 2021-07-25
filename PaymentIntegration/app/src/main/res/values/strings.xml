@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Payment integration</string>
+    <string name="pay_using_google_pay">Pay using google pay</string>
+    <string name="pay_using_google_pay_upi">Pay using google pay UPI</string>
+</resources>
