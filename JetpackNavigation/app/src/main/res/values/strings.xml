@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">JetpackNavigation</string>
+    <string name="home">Home</string>
+    <string name="AboutUs">About Us</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Profile">Profile</string>
+</resources>
