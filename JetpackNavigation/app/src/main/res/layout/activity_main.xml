@@ -37,6 +37,7 @@
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:labelVisibilityMode="labeled"
             app:menu="@menu/menu_bottom_nav" />
     </LinearLayout>
 
@@ -70,6 +71,20 @@
                 android:paddingHorizontal="20dp"
                 android:paddingVertical="20dp"
                 android:text="ABOUT US" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp"
+                android:text="SETTINGS" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="20dp"
+                android:text="PROFILE" />
         </LinearLayout>
     </com.google.android.material.navigation.NavigationView>
 
