@@ -33,6 +33,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
             app:navGraph="@navigation/navgraph" />
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"
             android:layout_width="match_parent"
@@ -46,47 +47,25 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true">
-
+        android:fitsSystemWindows="true"
+        app:menu="@menu/drawer_menu"
+        >
         <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <View
+            android:layout_height="60dp"
+
+            android:layout_gravity="bottom">
+
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/teal_200"
+                android:layout_height="match_parent"
+                android:text="Logout"
+                android:textColor="#000000"
+                android:paddingVertical="20dp"
+                android:paddingHorizontal="30dp"
                 />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp"
-                android:text="HOME" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp"
-                android:text="ABOUT US" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp"
-                android:text="SETTINGS" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="20dp"
-                android:text="PROFILE" />
         </LinearLayout>
     </com.google.android.material.navigation.NavigationView>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
