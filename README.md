@@ -7,3 +7,4 @@ Android applications built to implement concepts
 4. Jetpack navigation - Drawer and Bottom tab navigation
 5. Biometric login 
 6. Jetpack Compose - In progress 
+7. Camera X
