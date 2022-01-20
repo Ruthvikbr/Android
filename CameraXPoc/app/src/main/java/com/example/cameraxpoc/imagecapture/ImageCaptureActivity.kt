@@ -1,10 +1,14 @@
 package com.example.cameraxpoc.imagecapture
 
 import android.Manifest
+import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.Toast
@@ -15,13 +19,9 @@ import androidx.core.content.ContextCompat
 import com.example.cameraxpoc.R
 import kotlinx.android.synthetic.main.activity_image_capture.*
 import java.io.File
-import java.nio.ByteBuffer
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 
-typealias LumaListener = (luma: Double) -> Unit
 
 class ImageCaptureActivity : AppCompatActivity() {
 
@@ -29,7 +29,6 @@ class ImageCaptureActivity : AppCompatActivity() {
 
     private lateinit var outputDirectory: File
 
-    private lateinit var cameraExecutor: ExecutorService
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +49,6 @@ class ImageCaptureActivity : AppCompatActivity() {
 
         outputDirectory = getOutputDirectory()
 
-        cameraExecutor = Executors.newSingleThreadExecutor()
     }
 
     override fun onRequestPermissionsResult(
@@ -93,10 +91,14 @@ class ImageCaptureActivity : AppCompatActivity() {
                     Toast.makeText(
                         baseContext,
                         "Photo captured successfully",
-                        Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@ImageCaptureActivity,PreviewActivity::class.java)
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    galleryAddPic(
+                        System.currentTimeMillis().toString(),
+                    )
+                    val intent = Intent(this@ImageCaptureActivity, PreviewActivity::class.java)
                     val bundle = Bundle().apply {
-                        putString("file_path",photoFile.absolutePath)
+                        putString("file_path", photoFile.absolutePath)
                     }
                     intent.putExtras(bundle)
                     startActivity(intent)
@@ -110,10 +112,29 @@ class ImageCaptureActivity : AppCompatActivity() {
 
     }
 
+    private fun galleryAddPic(name: String) {
+        try {
+            val contentValues = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, name)
+                put(MediaStore.MediaColumns.MIME_TYPE, "image/jpg")
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                    put(MediaStore.MediaColumns.RELATIVE_PATH, Environment.DIRECTORY_PICTURES)
+                    put(MediaStore.Video.Media.IS_PENDING, 1)
+                }
+                put(MediaStore.Images.ImageColumns.BUCKET_ID, parent.toString().hashCode())
+
+            }
+            contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+
+        } catch (e: Exception) {
+
+        }
+    }
+
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
-        cameraProviderFuture.addListener(Runnable {
+        cameraProviderFuture.addListener({
             val cameraProvider: ProcessCameraProvider = cameraProviderFuture.get()
 
             val preview = Preview.Builder()
@@ -125,18 +146,15 @@ class ImageCaptureActivity : AppCompatActivity() {
             imageCapture = ImageCapture.Builder()
                 .build()
 
-            val imageAnalyzer = ImageAnalysis.Builder()
-                .build()
-                .also {
-                    it.setAnalyzer(cameraExecutor, LuminosityAnalyzer {
-                        Log.d(TAG, "Average luminosity: $it")
-                    })
-                }
-
             try {
                 cameraProvider.unbindAll()
 
-                cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageCapture,imageAnalyzer)
+                cameraProvider.bindToLifecycle(
+                    this,
+                    cameraSelector,
+                    preview,
+                    imageCapture,
+                )
 
             } catch (e: Exception) {
                 Log.e(TAG, "Use case binding failed", e)
@@ -154,37 +172,13 @@ class ImageCaptureActivity : AppCompatActivity() {
             mediaDir else filesDir
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        cameraExecutor.shutdown()
-    }
+
 
     companion object {
         private const val TAG = "CameraXBasic"
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
-    }
-
-    private class LuminosityAnalyzer(private val listener: LumaListener) : ImageAnalysis.Analyzer {
-
-        private fun ByteBuffer.toByteArray(): ByteArray {
-            rewind()
-            val data = ByteArray(remaining())
-            get(data)
-            return data
-        }
-
-        override fun analyze(image: ImageProxy) {
-            val buffer = image.planes[0].buffer
-            val data = buffer.toByteArray()
-            val pixels = data.map {
-                it.toInt() and 0xFF
-            }
-            val luma = pixels.average()
-            listener(luma)
-            image.cropRect
-        }
     }
 
 }

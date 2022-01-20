@@ -4,10 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_camera_alt_24.xml" value="0.18981481481481483" />
+        <entry key="app/src/main/res/drawable/ic_baseline_pause_circle_filled_24.xml" value="0.18055555555555555" />
         <entry key="app/src/main/res/layout/activity_image_analysis.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/activity_image_capture.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/layout/activity_preview.xml" value="0.20833333333333334" />
+        <entry key="app/src/main/res/layout/activity_video_capture_acitivity.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_video_preview.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -16,11 +16,13 @@ class PreviewActivity : AppCompatActivity() {
 
         if (bundle != null) {
             val filePath = bundle.getString("file_path")
-            val file = File(filePath)
-            Glide
-                .with(this)
-                .load(file)
-                .into(imageView)
+            if(filePath!=null) {
+                val file = File(filePath)
+                Glide
+                    .with(this)
+                    .load(file)
+                    .into(imageView)
+            }
         } else {
             finish()
         }

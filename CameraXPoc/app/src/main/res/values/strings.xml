@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CameraXPOC</string>
+    <string name="camera">Camera</string>
+    <string name="capture">Capture</string>
+    <string name="stop">Stop</string>
+    <string name="audio">Audio</string>
 </resources>
