@@ -1,5 +1,7 @@
 # Meditation UI
 
+App built to implement Jetpack compose UI
+
 ## Features
 - Jetpack compose
 
