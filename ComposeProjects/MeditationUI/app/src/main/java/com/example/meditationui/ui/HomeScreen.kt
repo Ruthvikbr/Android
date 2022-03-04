@@ -287,7 +287,6 @@ fun FeatureItem(feature: Feature) {
         ) {
             Text(
                 text = feature.title,
-                style = MaterialTheme.typography.h2,
                 lineHeight = 23.sp,
                 modifier = Modifier
                     .align(Alignment.TopStart)
