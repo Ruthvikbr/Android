@@ -1,4 +1,4 @@
-Meditation UI
+# Meditation UI
 
 ## Features
 - Jetpack compose
