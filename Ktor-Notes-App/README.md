@@ -1,4 +1,4 @@
-# KTOR NOTES APP
+# Notify
 
 Concepts implemented
 
